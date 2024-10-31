@@ -1,0 +1,134 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #1a1a1a;
+  color: #d1d1d1;
+}
+
+/* App Container */
+.App {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Sidebar (General Navigation) */
+.sidebar h2 {
+  color: #00ffae;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.sidebar .menu-item {
+  color: #d1d1d1;
+  font-size: 16px;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.sidebar .menu-item:hover {
+  background-color: #333333;
+}
+
+.sidebar .menu-item.active {
+  background-color: #00ffae;
+  color: #121212;
+}
+
+/* Dashboard */
+.dashboard {
+  flex-grow: 1;
+  background-color: #1a1a1a;
+  padding: 20px;
+}
+
+.dashboard h1 {
+  color: #00ffae;
+  margin-bottom: 20px;
+}
+
+.overview {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #121212;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 200px;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h2 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #00ffae;
+}
+
+.card p {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* Save Button */
+.save-btn {
+  background-color: #00ffae;
+  color: #121212;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.save-btn:disabled {
+  background-color: #333;
+  cursor: not-allowed;
+}
+
+.save-btn:hover:not(:disabled) {
+  background-color: #00d9a0;
+}
+
+.recent-announcements {
+  margin-top: 20px;
+}
+
+.recent-announcements ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.recent-announcements li {
+  background-color: #1e2a3a;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.recent-announcements h3 {
+  margin: 0;
+  color: #00ffae;
+}
+
+.announcement-date {
+  font-size: 14px;
+  color: #ccc;
+  margin-top: 5px;
+}

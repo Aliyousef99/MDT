@@ -1,0 +1,47 @@
+/* src/styles/Calendar.css */
+
+.calendar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.event-details {
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.add-event-btn {
+    background-color: #00ffae;
+    color: #121212;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.add-event-btn:hover {
+    background-color: #00d9a0;
+}
+
+.license-expiry-indicator {
+    color: #ff6b6b;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.calendar-container ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.calendar-container li {
+    margin-bottom: 10px;
+    font-size: 14px;
+}

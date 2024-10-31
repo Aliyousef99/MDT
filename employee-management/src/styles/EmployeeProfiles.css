@@ -1,0 +1,746 @@
+/* Profiles Container */
+.profiles-container {
+    display: flex;
+    flex-grow: 1;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Sidebar (Employee List) */
+.employee-list {
+    width: 220px;
+    background-color: #121212;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-right: 2px solid #333;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.employee-list h2 {
+    color: #00ffae;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Search Input */
+.search-input {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #333;
+    background-color: #121212;
+    color: #d1d1d1;
+}
+
+/* Profile List Styles */
+.employee-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.employee-list li {
+    padding: 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    background-color: #1e2a3a;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.employee-list li:hover {
+    background-color: #333333;
+    color: #00ffae;
+}
+
+.employee-name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.employee-id {
+    font-size: 14px;
+    color: #bbbbbb;
+    display: block;
+}
+
+/* Employee Details */
+.employee-details {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    background-color: #1a1a1a;
+    height: 100%;
+    overflow-y: auto;
+    margin-right: auto;
+    margin-left: 20px;
+    position: relative;
+}
+
+/* Header Buttons Container */
+.header-buttons-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    position: absolute;
+    top: 20px; /* Adjust the top position */
+    right: 20px; /* Align the buttons to the right side */
+    z-index: 10;
+}
+
+.toggle-form-btn {
+    margin-right: 10px; /* Space between the + button and the Save button */
+}
+
+/* Profile Header */
+.profile-header {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 20px;
+}
+
+/* Profile Image Section */
+.profile-image-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.profile-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #00ffae;
+}
+
+.image-url-input {
+    width: 100%;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #333;
+    background-color: #121212;
+    color: #d1d1d1;
+}
+
+/* Profile Info */
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    color: #ffffff;
+}
+
+.profile-info label {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #00ffae;
+}
+
+.editable-field {
+    width: 60%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #333;
+    background-color: #121212;
+    color: #d1d1d1;
+    margin-bottom: 10px;
+}
+
+/* Right Sidebar */
+.profile-sidebar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-section {
+    margin-bottom: 20px;
+    border: 2px solid #333333;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.profile-section h3 {
+    color: #00ffae;
+    margin-bottom: 10px;
+}
+
+/* Tags and Documents Lists */
+.profile-tags ul,
+.profile-documents ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.profile-tags ul li,
+.profile-documents ul li {
+    background-color: #121212;
+    padding: 10px;
+    border-radius: 50px;
+    margin-bottom: 5px;
+    color: #d1d1d1;
+}
+
+.profile-tags ul li {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    background-color: #00ffae;
+    color: #121212;
+    padding: 5px 10px;
+    border-radius: 50px;
+}
+
+.profile-documents ul li a {
+    color: #00ffae;
+    text-decoration: none;
+}
+
+.profile-documents ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Profile History */
+.profile-history {
+    border: 2px solid #333;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #1a1a1a;
+    margin-top: 20px;
+}
+
+/* Form Container */
+.form-container {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    height: 100vh;
+    background-color: #2e2e2e;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container.open {
+    right: 0;
+}
+
+/* Close Form Button (X) */
+.close-form-btn {
+    position: absolute;
+    top: 20px;
+    right: 410px;
+    background-color: #00ffae;
+    color: #121212;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+    z-index: 1001;
+}
+
+.close-form-btn:hover {
+    background-color: #00d9a0;
+}
+
+/* Form Content */
+.form-container h2 {
+    color: #00ffae;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-container label {
+    color: #d1d1d1;
+    margin-bottom: 5px;
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="tel"],
+.form-container textarea {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 50px;
+    border: 1px solid #444;
+    background-color: #121212;
+    color: #d1d1d1;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.form-container input[type="text"]:focus,
+.form-container input[type="email"]:focus,
+.form-container input[type="tel"]:focus,
+.form-container textarea:focus {
+    border-color: #00ffae;
+    outline: none;
+}
+
+.form-container textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.form-container button {
+    background-color: #00ffae;
+    color: #121212;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.form-container button:hover {
+    background-color: #00d9a0;
+}
+
+.form-container .cancel-btn {
+    background-color: #444;
+    color: #d1d1d1;
+}
+
+.form-container .cancel-btn:hover {
+    background-color: #555;
+}
+
+/* Toggle Form Button (+) */
+.toggle-form-btn {
+    background-color: #00ffae;
+    color: #112240;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+    position: relative;
+    margin-right: 20px;
+}
+
+.toggle-form-btn:hover {
+    background-color: #00d9a0;
+}
+
+/* Save Button */
+.save-btn {
+    background-color: #00ffae;
+    color: #121212;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-right: 18px;
+}
+
+.save-btn:disabled {
+    background-color: #333;
+    cursor: not-allowed;
+}
+
+.save-btn:hover:not(:disabled) {
+    background-color: #00d9a0;
+}
+
+/* Profile Summary Section */
+.profile-summary-section {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    width: 100%; /* Ensures full-width coverage */
+    border-bottom: 2px solid #333; /* Adds a line below the summary section */
+}
+
+.summary-margin {
+    margin: 0.667vmin; /* Apply margin based on the image provided */
+}
+
+.summary-padding {
+    padding: 10px; /* Padding as shown in the image */
+}
+
+.summary-box {
+    width: calc(100% - 2 * 0.667vmin - 20px); /* Adjust width considering the margin and padding */
+    height: 474px; /* Based on the image, this height should be set */
+    background-color: #121212;
+    color: #ffffff;
+    border: 0.667vmin solid #333; /* Border thickness as per the image */
+    overflow-y: auto; /* Allow scrolling within the box */
+    resize: none; /* Prevent manual resizing */
+}
+
+/* Tags Section */
+.profile-tags-section {
+    margin-top: 0;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 20px; /* Add space under the tags */
+}
+
+.profile-tags-section h3 {
+    color: #00ffae;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.add-tag-btn {
+    background-color: #00ffae;
+    color: #121212;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 10px;
+    position: relative;
+    top: -5px;
+}
+
+.add-tag-btn:hover {
+    background-color: #00d9a0;
+}
+
+.profile-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.tag-item {
+    background-color: #121212;
+    border: 1px solid #00ffae;
+    border-radius: 20px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.tag-item.selected {
+    background-color: #00ffae;
+    color: #121212;
+}
+
+.remove-tag-btn {
+    background-color: #ff6b6b;
+    border: none;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.remove-tag-btn:hover {
+    background-color: #ff4c4c;
+}
+
+/* Licenses Section */
+.profile-licenses-section {
+    margin-top: 20px;
+    position: relative;
+    padding-bottom: 40px; /* Add space under the licenses */
+}
+
+.profile-licenses-section h3 {
+    color: #00ffae;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.add-license-btn {
+    background-color: #00ffae;
+    color: #121212;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 10px;
+    position: relative;
+    top: -5px;
+}
+
+.add-license-btn:hover {
+    background-color: #00d9a0;
+}
+
+.profile-licenses {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.license-item {
+    background-color: #121212;
+    border: 1px solid #00ffae;
+    border-radius: 20px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.license-item.selected {
+    background-color: #00ffae;
+    color: #121212;
+}
+
+.remove-license-btn {
+    background-color: #ff6b6b;
+    border: none;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.remove-license-btn:hover {
+    background-color: #ff4c4c;
+}
+
+/* Pop-up Styles */
+.tag-popup,
+.license-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1a1a1a;
+    border: 2px solid #00ffae;
+    border-radius: 10px;
+    padding: 20px;
+    z-index: 2000;
+    width: 300px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.close-popup-btn {
+    background-color: #ff6b6b;
+    border: none;
+    color: #121212;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Ensure the details section is fully scrollable */
+.employee-details {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #1a1a1a;
+    height: 100%;
+    overflow-y: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* License Popup Styles */
+.license-popup,
+/* Adjust expiration popup styles */
+.expiration-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1a1a1a;
+    border: 2px solid #00ffae;
+    border-radius: 10px;
+    padding: 20px;
+    z-index: 2000;
+    width: 400px; /* Increase width for larger popup */
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.expiration-popup .popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.expiration-popup .popup-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.expiration-popup .expiration-date-input {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #333;
+    background-color: #121212;
+    color: #d1d1d1;
+    font-size: 14px;
+}
+
+.expiration-popup .submit-btn {
+    background-color: #00ffae;
+    color: #121212;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.expiration-popup .submit-btn:hover {
+    background-color: #00d9a0;
+}
+
+/* Delete button */
+.delete-btn {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+    background-color: #ff4c4c;
+}
+
+/* Delete confirmation popup */
+.delete-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1a1a1a;
+    border: 2px solid #ff6b6b;
+    border-radius: 10px;
+    padding: 20px;
+    z-index: 2000;
+    width: 300px;
+    text-align: center;
+}
+
+.delete-popup .popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.delete-popup .close-popup-btn {
+    background-color: #ff6b6b;
+    border: none;
+    color: #121212;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.delete-popup .popup-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.confirm-btn {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.cancel-btn {
+    background-color: #444;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.cancel-btn:hover, .confirm-btn:hover {
+    background-color: #ff4c4c;
+}
