@@ -12,7 +12,7 @@ const reportsRoute = require('./routes/reports');  // Import reports route
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'riseagain58',  // Ensure you replace this with your actual MySQL password
+    password: '******',  // Ensure you replace this with your actual MySQL password
     database: 'mdt'
 });
 
